@@ -36,3 +36,15 @@ data class GitUserModel (
     @SerializedName("created_at") var createdAt:String,
     @SerializedName("updated_at") var updatedAt:String
 )
+
+data class GitUserShortModel (
+        @SerializedName("login") var login: String,
+        @SerializedName("id") var id: Int,
+        @SerializedName("avatar_url") var avatarUrl:String,
+        @SerializedName("url") var url:String,
+        @SerializedName("html_url") var htmlUrl:String,
+        @SerializedName("name") var name:String,
+        @SerializedName("email") var email:Any,
+        @SerializedName("created_at") var createdAt:String,
+        @SerializedName("updated_at") var updatedAt:String
+)

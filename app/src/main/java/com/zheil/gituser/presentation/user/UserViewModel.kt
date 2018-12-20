@@ -16,6 +16,9 @@ class UserViewModel: ViewModel() {
     //@field:Named("mock")
     lateinit var mInteractor: IUserInteractor
 
+    val mUserLogin = MutableLiveData<String>()
+    val mUserName = MutableLiveData<String>()
+
     init {
         DaggerUserComponent
                 .builder()
@@ -24,11 +27,13 @@ class UserViewModel: ViewModel() {
                 .inject(this)
     }
 
-    val mUserName = MutableLiveData<String>()
+
 
     fun onClickBtnSearch() {
         mInteractor.getUser {
-            name -> mUserName.value = "$name"
+            item ->
+            mUserName.value = item.name
+            mUserLogin.value = item.login
         }
     }
 }
