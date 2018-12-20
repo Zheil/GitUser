@@ -1,13 +1,12 @@
 package com.zheil.gituser
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.zheil.gituser.R
+import com.zheil.gituser.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity: BaseActivity() {
+    override fun getLayoutResourceId(): Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
     }
 }
