@@ -11,10 +11,12 @@ import dagger.Provides
 @Module
 class UserModule {
 
+    @UserScope
     @Provides
     fun provideUserInteractor(api: Api): IUserInteractor = UserInteractor(api)
 
     @MOCK
+    @UserScope
     @Provides
     //@Named("mock")
     fun provideMockUserInteractor(api: Api): IUserInteractor = MockUserInteractor(api)

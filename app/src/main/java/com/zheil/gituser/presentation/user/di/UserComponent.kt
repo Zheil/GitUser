@@ -5,6 +5,7 @@ import com.zheil.gituser.presentation.user.UserFragment
 import com.zheil.gituser.presentation.user.UserViewModel
 import dagger.Component
 
+@UserScope
 @Component(modules = [UserModule::class], dependencies = [AppComponent::class])
 interface UserComponent {
 
