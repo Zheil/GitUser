@@ -38,6 +38,10 @@ class UserViewModel(private val app: Application): AndroidViewModel(app) {
 
 
     fun onClickBtnSearch() {
+        onSearchStart()
+    }
+
+    private fun onSearchStart() {
         mInteractor.getUser {
             item ->
             mUserName.value = item.name
