@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.zheil.di.gituser"
+        applicationId "com.zheil.gituser"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
