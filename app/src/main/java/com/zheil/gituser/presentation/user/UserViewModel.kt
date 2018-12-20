@@ -3,16 +3,11 @@ package com.zheil.gituser.presentation.user
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.content.Context
-import android.databinding.BindingAdapter
-import android.widget.ImageView
-import com.squareup.picasso.Picasso
-import com.zheil.gituser.R
 import com.zheil.gituser.di.DaggerUserComponent
 import com.zheil.gituser.di.MOCK
 import com.zheil.gituser.di.UserModule
 import com.zheil.gituser.presentation.user.interactor.IUserInteractor
+import com.zheil.gituser.presentation.user.model.UserMapper
 import javax.inject.Inject
 
 
@@ -23,10 +18,11 @@ class UserViewModel(private val app: Application): AndroidViewModel(app) {
     //@field:Named("mock")
     lateinit var mInteractor: IUserInteractor
 
+    private val mMapper = UserMapper()
+
     val mUserLogin = MutableLiveData<String>()
     val mUserName = MutableLiveData<String>()
     val mUserAvatarUrl = MutableLiveData<String>()
-
 
     init {
         DaggerUserComponent
@@ -44,10 +40,12 @@ class UserViewModel(private val app: Application): AndroidViewModel(app) {
     private fun onSearchStart() {
         mInteractor.getUser {
             item ->
-            mUserName.value = item.name
-            mUserLogin.value = item.login
-            mUserAvatarUrl.value = item.avatarUrl
+            val uiModel = mMapper.map(item)
+            uiModel.let {
+                mUserName.value = it.name
+                mUserLogin.value = it.login
+                mUserAvatarUrl.value = it.urlAvatar
+            }
         }
     }
-
 }
