@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class BaseFragment: Fragment() {
+abstract class BaseFragment: Fragment() {
+
+    protected abstract fun getLayoutResourceId(): Int
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(getLayoutResourceId(), container, false)
     }
 }
