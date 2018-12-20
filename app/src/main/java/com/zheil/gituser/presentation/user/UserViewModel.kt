@@ -27,16 +27,6 @@ class UserViewModel(private val app: Application): AndroidViewModel(app) {
     val mUserName = MutableLiveData<String>()
     val mUserAvatarUrl = MutableLiveData<String>()
 
-    init {
-       /* DaggerUserComponent
-                .builder()
-                //.userComponent(App.get())
-                //.userModule(UserModule())
-                .build()
-                .inject(this)*/
-    }
-
-
     fun onClickBtnSearch() {
         onSearchStart()
     }

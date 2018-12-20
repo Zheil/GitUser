@@ -32,8 +32,6 @@ class UserFragment: BaseFragment() {
             DaggerUserComponent
                     .builder()
                     .appComponent(App.get(activity!!).getAppComponent())
-                    //.userComponent(App.get(activity!!).getAppComponent())
-                    //.userModule(UserModule())
                     .build()
                     .inject(mUserViewModel)
     }
