@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.zheil.gituser.App
 import com.zheil.gituser.R
 import com.zheil.gituser.presentation.base.BaseFragment
 import com.zheil.gituser.databinding.FragmentUserBinding
@@ -30,7 +31,8 @@ class UserFragment: BaseFragment() {
     private fun initDagger() {
             DaggerUserComponent
                     .builder()
-                    //.userComponent(App.get())
+                    .appComponent(App.get(activity!!).getAppComponent())
+                    //.userComponent(App.get(activity!!).getAppComponent())
                     //.userModule(UserModule())
                     .build()
                     .inject(mUserViewModel)

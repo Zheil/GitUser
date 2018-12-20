@@ -7,7 +7,7 @@ import com.zheil.gituser.presentation.user.UserFragment
 import com.zheil.gituser.presentation.user.UserViewModel
 import dagger.Component
 
-@Component(modules = [UserModule::class, AppModule::class])//, dependencies = [AppComponent::class])
+@Component(modules = [UserModule::class], dependencies = [AppComponent::class])
 interface UserComponent {
 
     fun inject(viewModel: UserViewModel)
