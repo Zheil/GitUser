@@ -1,19 +1,14 @@
 package com.zheil.gituser.presentation.user
 
-import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import com.zheil.gituser.App
-import com.zheil.gituser.presentation.user.di.DaggerUserComponent
+import android.arch.lifecycle.ViewModel
 import com.zheil.gituser.presentation.user.di.MOCK
-import com.zheil.gituser.presentation.user.di.UserComponent
-import com.zheil.gituser.presentation.user.di.UserModule
 import com.zheil.gituser.presentation.user.interactor.IUserInteractor
 import com.zheil.gituser.presentation.user.model.UserMapper
 import javax.inject.Inject
 
 
-class UserViewModel(private val app: Application): AndroidViewModel(app) {
+class UserViewModel: ViewModel() {
 
     @Inject
     @field:MOCK
