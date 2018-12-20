@@ -20,6 +20,7 @@ class UserFragment: BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: FragmentUserBinding = DataBindingUtil.inflate(inflater, getLayoutResourceId(), container, false)
         mUserViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
+        binding.setLifecycleOwner(this)
         binding.mainView = mUserViewModel
         return binding.root
     }
