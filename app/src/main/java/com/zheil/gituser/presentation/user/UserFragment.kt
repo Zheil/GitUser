@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.zheil.gituser.R
 import com.zheil.gituser.presentation.base.BaseFragment
 import com.zheil.gituser.databinding.FragmentUserBinding
+import com.zheil.gituser.presentation.user.di.DaggerUserComponent
 
 
 class UserFragment: BaseFragment() {
@@ -22,6 +23,16 @@ class UserFragment: BaseFragment() {
         mUserViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         binding.setLifecycleOwner(this)
         binding.mainView = mUserViewModel
+        initDagger()
         return binding.root
+    }
+
+    private fun initDagger() {
+            DaggerUserComponent
+                    .builder()
+                    //.userComponent(App.get())
+                    //.userModule(UserModule())
+                    .build()
+                    .inject(mUserViewModel)
     }
 }
