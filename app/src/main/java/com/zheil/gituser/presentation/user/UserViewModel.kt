@@ -18,7 +18,8 @@ class UserViewModel(private val app: Application): AndroidViewModel(app) {
     //@field:Named("mock")
     lateinit var mInteractor: IUserInteractor
 
-    private val mMapper = UserMapper()
+    @Inject
+    lateinit var mMapper: UserMapper
 
     val mUserLogin = MutableLiveData<String>()
     val mUserName = MutableLiveData<String>()

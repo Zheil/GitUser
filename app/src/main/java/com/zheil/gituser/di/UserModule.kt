@@ -3,6 +3,7 @@ package com.zheil.gituser.di
 import com.zheil.gituser.presentation.user.interactor.IUserInteractor
 import com.zheil.gituser.presentation.user.interactor.MockUserInteractor
 import com.zheil.gituser.presentation.user.interactor.UserInteractor
+import com.zheil.gituser.presentation.user.model.UserMapper
 import dagger.Module
 import dagger.Provides
 
@@ -16,4 +17,7 @@ class UserModule {
     @Provides
     //@Named("mock")
     fun provideMockUserInteractor(): IUserInteractor = MockUserInteractor()
+
+    @Provides
+    fun provideMapper(): UserMapper = UserMapper()
 }
