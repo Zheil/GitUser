@@ -1,4 +1,4 @@
-package com.zheil.gituser.base
+package com.zheil.gituser.presentation.base
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

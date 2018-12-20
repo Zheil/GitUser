@@ -1,4 +1,4 @@
-package com.zheil.gituser.user
+package com.zheil.gituser.presentation.user
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zheil.gituser.R
-import com.zheil.gituser.base.BaseFragment
+import com.zheil.gituser.presentation.base.BaseFragment
 import com.zheil.gituser.databinding.FragmentUserBinding
 
 

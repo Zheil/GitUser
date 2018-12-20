@@ -1,8 +1,9 @@
-package com.zheil.gituser
+package com.zheil.gituser.presentation
 
 import android.os.Bundle
-import com.zheil.gituser.base.BaseActivity
-import com.zheil.gituser.user.UserFragment
+import com.zheil.gituser.R
+import com.zheil.gituser.presentation.base.BaseActivity
+import com.zheil.gituser.presentation.user.UserFragment
 
 class MainActivity: BaseActivity() {
     override fun getContainerResourceId(): Int = R.id.main_container

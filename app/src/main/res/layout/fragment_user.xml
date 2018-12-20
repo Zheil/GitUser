@@ -4,7 +4,7 @@
     <data>
         <variable
             name="mainView"
-            type="com.zheil.gituser.user.UserViewModel" />
+            type="com.zheil.gituser.presentation.user.UserViewModel" />
     </data>
 
 

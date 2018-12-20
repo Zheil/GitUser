@@ -1,4 +1,4 @@
-package com.zheil.gituser.user
+package com.zheil.gituser.presentation.user
 
 
 class UserInteractor {

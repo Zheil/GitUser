@@ -1,8 +1,7 @@
-package com.zheil.gituser.user
+package com.zheil.gituser.presentation.user
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
 
 
 class UserViewModel: ViewModel() {

@@ -1,4 +1,4 @@
-package com.zheil.gituser.base
+package com.zheil.gituser.presentation.base
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
