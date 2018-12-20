@@ -2,6 +2,7 @@ package com.zheil.gituser.presentation.user
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.zheil.gituser.presentation.user.interactor.UserInteractor
 
 
 class UserViewModel: ViewModel() {
