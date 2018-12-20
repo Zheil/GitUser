@@ -3,10 +3,13 @@ package com.zheil.gituser.presentation.user.interactor
 import android.util.Log
 import com.zheil.gituser.data.model.GitUserShortModel
 import com.zheil.gituser.data.network.Api
+import javax.inject.Inject
 
 
-class UserInteractor(): IUserInteractor {
-   private val mApi = Api()
+class UserInteractor(private val mApi: Api): IUserInteractor {
+   //private val mApi = Api()
+
+    //@Inject lateinit var mApi: Api
 
     override fun getUser(onSuccess: (userModel: GitUserShortModel) -> Unit) {
        //onSuccess("REAL USER")

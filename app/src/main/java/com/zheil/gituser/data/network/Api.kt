@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-class Api {
-    private val mApi = getRetrofit().create(RequestApi::class.java)
+class Api(private val mApi: RequestApi) {
+    //private val mApi = getRetrofit().create(RequestApi::class.java)
     private val URL = "https://api.github.com/"
 
     private fun getRetrofit(): Retrofit {
