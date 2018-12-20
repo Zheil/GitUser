@@ -1,4 +1,4 @@
-package com.zheil.gituser.di
+package com.zheil.gituser.presentation.user.di
 
 import javax.inject.Qualifier
 

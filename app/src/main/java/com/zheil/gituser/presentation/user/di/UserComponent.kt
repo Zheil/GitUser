@@ -1,4 +1,4 @@
-package com.zheil.gituser.di
+package com.zheil.gituser.presentation.user.di
 
 import com.zheil.gituser.presentation.user.UserViewModel
 import dagger.Component
