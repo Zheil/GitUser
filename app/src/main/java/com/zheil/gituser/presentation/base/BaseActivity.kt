@@ -15,7 +15,7 @@ abstract class BaseActivity: AppCompatActivity() {
         setContentView(getLayoutResourceId())
     }
 
-    protected fun setupFragment(fragment: BaseFragment) {
+    protected fun setupFragment(fragment: Fragment) {
         val currentFragment: Fragment? = supportFragmentManager.findFragmentById(getContainerResourceId())
         if (currentFragment == null) {
             supportFragmentManager
@@ -25,7 +25,7 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
-    protected fun replaceFragment(fragment: BaseFragment) {
+    protected fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(getContainerResourceId(), fragment)

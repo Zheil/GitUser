@@ -1,17 +1,12 @@
 package com.zheil.gituser.presentation.base
 
-import android.os.Bundle
+import android.arch.lifecycle.ViewModel
+import android.databinding.ViewDataBinding
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment<B: ViewDataBinding, V: ViewModel>: Fragment() {
 
-    protected abstract fun getLayoutResourceId(): Int
+    protected lateinit var mBinding: B
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(getLayoutResourceId(), container, false)
-    }
 }

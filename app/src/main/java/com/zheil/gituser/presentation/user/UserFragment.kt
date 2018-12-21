@@ -1,31 +1,27 @@
 package com.zheil.gituser.presentation.user
 
 import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zheil.gituser.App
-import com.zheil.gituser.R
 import com.zheil.gituser.presentation.base.BaseFragment
 import com.zheil.gituser.databinding.FragmentUserBinding
 import com.zheil.gituser.presentation.user.di.DaggerUserComponent
 
 
-class UserFragment: BaseFragment() {
+class UserFragment: BaseFragment<FragmentUserBinding, UserViewModel>() {
 
     private lateinit var mUserViewModel: UserViewModel
 
-    override fun getLayoutResourceId(): Int = R.layout.fragment_user
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding: FragmentUserBinding = DataBindingUtil.inflate(inflater, getLayoutResourceId(), container, false)
+        mBinding = FragmentUserBinding.inflate(inflater, container, false)
         mUserViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        binding.setLifecycleOwner(this)
-        binding.mainView = mUserViewModel
+        mBinding.setLifecycleOwner(this)
+        mBinding.mainView = mUserViewModel
         initDagger()
-        return binding.root
+        return mBinding.root
     }
 
     private fun initDagger() {
